@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+boto3
+celery
+redis
+sqlalchemy
+psycopg2-binary
+flower
+python-dotenv
+requests
+pandas

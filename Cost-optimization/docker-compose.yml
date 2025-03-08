@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: ./Frontend/cloud-cost-optimizer-ui
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./Frontend/cloud-cost-optimizer-ui:/app
+    depends_on:
+      - backend
+    environment:
+      - REACT_APP_API_URL=http://localhost:8000
+
+
+  backend:
+    build: ./Backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./Backend:/app
+    environment:
+      - AWS_ACCESS_KEY_ID=AKIAWG2AASS24YEGB4UY
+      - AWS_SECRET_ACCESS_KEY=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
+      - AWS_REGION=us-east-1
+
